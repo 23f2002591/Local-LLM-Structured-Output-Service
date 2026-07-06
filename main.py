@@ -21,7 +21,8 @@ class InvoiceResponse(BaseModel):
     amount: float
     currency: str
     date: str
-
+    
+@app.post("/", response_model=InvoiceResponse)
 @app.post("/")
 @app.post("/extract", response_model=InvoiceResponse)
 def extract(req: InvoiceRequest):
