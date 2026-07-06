@@ -22,7 +22,7 @@ class InvoiceResponse(BaseModel):
     currency: str
     date: str
 
-
+@app.post("/")
 @app.post("/extract", response_model=InvoiceResponse)
 def extract(req: InvoiceRequest):
     text = req.text.strip()
