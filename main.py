@@ -24,6 +24,8 @@ class InvoiceResponse(BaseModel):
     
 @app.post("/", response_model=InvoiceResponse)
 @app.post("/")
+@app.get("/")
+@app.head("/")
 @app.post("/extract", response_model=InvoiceResponse)
 def extract(req: InvoiceRequest):
     text = req.text.strip()
